@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Easy Grader</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body id="top">
+    <main>
+      <section class="config">
+        <h1>Easy Grader</h1>
+        <form action="./#results" id="config">
+          <label>
+            <b>Number of problems</b>
+            <input type="number" name="problems" value="17" min="0" />
+          </label>
+          <label>
+            <b>Decimal places</b>
+            <input type="number" name="places" value="2" max="100" min="0" />
+          </label>
+          <label>
+            <b>Step size</b>
+            <input type="number" name="step" value="0.5" min="0" step="0.1" />
+          </label>
+          <button>Go</button>
+        </form>
+      </section>
+      <section class="results">
+          <h2 id="results">Grade Table</h2>
+          <table>
+              <thead>
+                  <tr>
+                      <th>Fraction</th>
+                      <th>Percent</th>
+                  </tr>
+              </thead>
+              <tbody id="output"></tbody>
+          </table>
+      </section>
+    </main>
+    <nav>
+        <a class="back-to-top" href="#top">Back to top</a>
+    </nav>
+  </body>
+  <script src="main.js"></script>
+</html>
