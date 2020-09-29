@@ -22,6 +22,10 @@ textarea {
   --primary-dark: hsl(220deg 74% 33%);
 }
 
+a {
+  color: var(--primary);
+}
+
 h1,
 h2 {
   margin-bottom: 1rem;
@@ -48,18 +52,48 @@ label {
   gap: 0.5rem;
 }
 
+button,
+input {
+  border: none;
+  padding: 0.25rem;
+}
+
+button {
+  background-color: white;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+form button:active,
+form input:active,
+form button:hover,
+form input:hover {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
 nav {
   /*
         Adds some space so that the "back to top"
         button doesn't cover any content
     */
-  height: 2rem;
+  height: 3rem;
 }
 
 .back-to-top {
+  background-color: var(--primary);
   bottom: 1rem;
+  color: white;
   position: fixed;
+  padding: 0.5rem;
   right: 1rem;
+  text-decoration: none;
+}
+
+.back-to-top:focus,
+.back-to-top:hover {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 table {
@@ -77,9 +111,8 @@ table tr:nth-child(even) {
 }
 
 tbody tr:hover {
-  --border-color: hsl(200, 90%, 60%);
   background-color: hsl(200, 90%, 94%);
-  outline: 1px solid var(--border-color);
+  font-weight: bold;
   transform: scale(1.025);
 }
 
