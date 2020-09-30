@@ -27,3 +27,38 @@
 
   document.getElementById("output").innerHTML = output;
 })();
+
+(() => {
+  const toggle = document.querySelector("#dark-mode-toggle > input");
+  const label = document.querySelector("#dark-mode-toggle > span");
+  const prefersDarkMode = JSON.parse(localStorage.getItem("dark-mode"));
+
+  function setDarkMode() {
+    label.textContent = "🌞";
+    label.setAttribute("aria-label", "Switch to light mode");
+    document.body.setAttribute("data-theme", "dark");
+  }
+
+  function setLightMode() {
+    label.textContent = "🌛";
+    label.setAttribute("aria-label", "Switch to dark mode");
+    document.body.removeAttribute("data-theme");
+  }
+
+  if (prefersDarkMode) {
+    toggle.checked = true;
+    setDarkMode();
+  } else {
+    setLightMode();
+  }
+
+  toggle.addEventListener("change", () => {
+    localStorage.setItem("dark-mode", JSON.stringify(toggle.checked));
+
+    if (toggle.checked) {
+      setDarkMode();
+    } else {
+      setLightMode();
+    }
+  });
+})();
