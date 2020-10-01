@@ -1,7 +1,9 @@
 (() => {
   const usp = new URLSearchParams(location.search);
+  // Places is special because it can be zero
+  const places = parseInt(usp.get("places"));
   const params = {
-    places: parseFloat(usp.get("places")) || 2,
+    places: places === 0 ? places : places || 2,
     problems: parseFloat(usp.get("problems")) || 17,
     step: parseFloat(usp.get("step")) || 0.5,
   };
@@ -14,10 +16,6 @@
   let output = "";
 
   for (let i = params.problems; i >= 0; i -= params.step) {
-    // output += `<li>${i}/${params.problems} or ${(
-    //   (100 * i) /
-    //   params.problems
-    // ).toFixed(params.places)}%</li>`;
     output += `<tr>
         <td>${i}/${params.problems}</td>
         <td>${((100 * i) / params.problems).toFixed(params.places)}%
