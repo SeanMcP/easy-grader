@@ -28,29 +28,50 @@ textarea {
 /* == END BASE == */
 
 :root {
-  --primary: hsl(218deg 70% 44%);
-  --primary-dark: hsl(220deg 74% 33%);
+  --gray050: hsl(220, 6%, 5%);
+  --gray100: hsl(220, 6%, 10%);
+  --gray200: hsl(220, 6%, 20%);
+  --gray300: hsl(220, 6%, 30%);
+  --gray400: hsl(220, 6%, 40%);
+  --gray500: hsl(220, 6%, 50%);
+  --gray600: hsl(220, 6%, 60%);
+  --gray700: hsl(220, 6%, 70%);
+  --gray800: hsl(220, 6%, 80%);
+  --gray900: hsl(220, 6%, 90%);
+  --gray950: hsl(220, 6%, 95%);
+
+  --off-black: var(--gray050);
+  --off-white: var(--gray950);
+
+  --blue: hsl(220, 70%, 44%);
+  --dark-blue: hsl(220, 74%, 33%);
+}
+
+:root {
+  --primary: var(--blue);
+  --primary-dark: var(--dark-blue);
 
   /* Light */
   --background-color: white;
-  --text-color: hsl(0, 0%, 7%);
-  --alternate-row-background: hsla(0, 0%, 0%, 2%);
-  --border-color: hsla(0, 0%, 0%, 12%);
-  --shadow: 0 0 2rem hsla(0, 0%, 0%, 15%), 0 0 0.5rem hsla(0, 0%, 0%, 5%);
+  --text-color: var(--gray100);
+  --alternate-row-background: var(--off-white);
+  --border-color: var(--gray900);
+  --shadow: 0 0 2rem var(--gray800), 0 0 0.5rem var(--off-white);
 }
 
 body[data-theme="dark"] {
   --background-color: black;
-  --text-color: #eeeeee;
-  --alternate-row-background: hsla(0, 0%, 100%, 6%);
-  --border-color: hsla(0, 0%, 100%, 12%);
-  --shadow: 0 0 2rem hsla(0, 0%, 100%, 30%), 0 0 0.5rem hsla(0, 0%, 100%, 10%);
+  --text-color: var(--gray900);
+  --alternate-row-background: var(--off-black);
+  --border-color: var(--gray200);
+  --shadow: 0 0 2rem var(--gray300), 0 0 0.5rem var(--gray100);
 }
 
 body {
   background-color: var(--background-color);
   color: var(--text-color);
-  transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out,
+    color 200ms ease-in-out;
 }
 
 a {
